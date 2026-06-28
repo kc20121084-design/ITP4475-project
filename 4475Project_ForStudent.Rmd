@@ -2,6 +2,12 @@ Solution
 
 Package used
 ```{r}
+install.packages("xlsx")
+install.packages("sqldf")
+install.packages("ggplot2")
+install.packages("mclust")
+install.packages("rpart")
+
 options(java.parameters = c("-XX:+UseConcMarkSweepGC", "-Xmx8192m"))
 require(xlsx)
 require(sqldf)
@@ -13,7 +19,8 @@ require(rpart.plot)
 
 data input
 ```{r}
-
+sales <- read.xlsx("Sale_Data.xlsx", sheetName = "Sales_Record", encoding = "UTF-8")
+product <- read.xlsx("Sale_Data.xlsx", sheetName = "Product_Information", encoding = "UTF-8")
 ```
 
 Data Observation / Cleansing
